@@ -1,0 +1,84 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// Navメニュー
+@media (min-width: 80em) {
+html{
+    font-size: 20px !important;
+}
+  #main {
+    max-width: none;
+  }
+  .sidebar {
+    padding-left: 0.5rem;
+
+    .nav__sub-title {
+      margin: 0;
+      padding: 0.75rem 30px 0.75rem 0.5rem;
+      position: relative;
+
+      +ul {
+        display: none;
+      
+        li {
+          margin: 0;
+        }
+        a{
+          display:inline-block;
+          width: 100%;
+          padding: 0.5rem 1rem;
+          box-sizing: border-box;
+        }
+        li:hover{
+          background: #f8f8f8;
+          cursor: pointer;
+        }
+        .active {
+          background: #f6f6f6 !important;
+          margin-left: 0;
+          padding: 0.5rem 1rem;
+          box-sizing: border-box;
+        }
+        .nav__sub-title {
+          padding: 0.75rem 30px 0.75rem 1rem;
+          
+            +ul .active {
+              padding: 0.5rem 1.5rem;
+            }
+            +ul a{
+              padding: 0.5rem 1.5rem;
+            }
+        }
+      }
+      &:hover {
+        background: #f8f8f8;
+        cursor: pointer;
+      }
+      &::after {
+        content: '\25be';
+        font-size: 1rem;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}
+
+// アイコン表示
+a[target="_blank"]:after {
+    content: "\f08e";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 3px;
+}

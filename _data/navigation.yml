@@ -1,0 +1,331 @@
+# main links
+main:
+  - title: "EC-CUBEについて"
+    url: https://www.ec-cube.net/
+  - title: "開発コミュニティ"
+    url: https://xoops.ec-cube.net/
+
+# documentation links
+docs:
+  - title: ec-cube.co
+    output: web, pdf
+    children:
+      - title: ec-cube.coとは
+        url: /co
+        output: web, pdf
+      - title: セキュリティ対策について
+        url: /co/co_security
+        output: web, pdf
+      - title: アップデート指針
+        url: /co/co_update_guidelines
+        output: web, pdf
+      - title: Console
+        url: /co/co_console
+        output: web, pdf
+      - title: ネーミングルール
+        url: /co/co_naming_rules
+        output: web, pdf
+      - title: Git管理機能の仕様
+        url: /co/co_git
+        output: web, pdf
+      - title: カスタマイズディレクトリ利用方法
+        url: /co/co_customize_dir_usage
+        output: web, pdf
+      - title: テスト環境の構築
+        url: /co/co_staging
+        output: web, pdf
+      - title: ログの取得
+        url: /co/co_log
+        output: web, pdf
+      - title: FAQ
+        url: /co/co_faq
+        output: web, pdf
+
+  - title: はじめに
+    output: web, pdf
+    children:
+      - title: 最新バージョン
+        url: /quickstart/latest_version
+        output: web, pdf
+      - title: システム要件
+        url: /quickstart/requirement
+        output: web, pdf
+      - title: 本番環境での注意事項
+        url: /quickstart/cautions_of_prod
+        output: web, pdf
+
+  - title: 初学者向け情報
+    output: web, pdf
+    children:
+      - title: 学習のステップ
+        url: /learning/learning_step
+        output: web, pdf
+
+  - title: インストール
+    output: web, pdf
+    children:
+      - title: 各種インストール方法
+        url: /quickstart/install
+        output: web, pdf
+      - title: コマンドラインインターフェイス
+        url: /quickstart/cli
+        output: web, pdf
+
+  - title: バージョンアップ
+    output: web, pdf
+    children:
+      - title: 4.2から4.3への本体バージョンアップ
+        url: /update43
+        output: web, pdf
+      - title: 4.2から4.3へのマイグレーション
+        url: /update-42-43
+        output: web, pdf
+      - title: 4.1から4.2へのマイグレーション
+        url: /update-41-42
+        output: web, pdf
+      - title: 4.0から4.1への本体バージョンアップ
+        url: /update41
+        output: web, pdf
+      - title: 4.0から4.1へのマイグレーション
+        url: /update-40-41
+        output: web, pdf
+      - title: 4.2本体バージョンアップ
+        url: /update42x
+        output: web, pdf
+      - title: 4.1本体バージョンアップ
+        url: /update41x
+        output: web, pdf
+      - title: 4.0本体バージョンアップ
+        url: /update
+        output: web, pdf
+      - title: 4.0.3での注意点
+        url: /update/4_0_3
+        output: web, pdf
+      - title: SameSite Cookie 対応
+        url: /hotfix_samesite_cookie
+        output: web, pdf
+
+  - title: 機能仕様
+    output: web, pdf
+    children:
+      - title: 機能一覧
+        url: https://www.ec-cube.net/product/functions.php
+        output: web, pdf
+      - title: 受注関連
+        url: /spec_order
+        output: web, pdf
+      - title: 税率設定
+        url: /spec_tax
+        output: web, pdf
+      - title: 支払方法設定
+        url: /spec_payment
+        output: web, pdf
+
+  - title: 本体カスタマイズ
+    output: web, pdf
+    children:
+      - title: ディレクトリ構成
+        url: /spec_directory-structure
+        output: web, pdf
+      - title: Controllerのカスタマイズ
+        url: /customize_controller
+        output: web, pdf
+      - title: Entityのカスタマイズ
+        url: /customize_entity
+        output: web, pdf
+      - title: Repositoryのカスタマイズ
+        url: /customize_repository
+        output: web, pdf
+      - title: FormTypeのカスタマイズ
+        url: /customize_formtype
+        output: web, pdf
+      - title: 購入フローのカスタマイズ
+        url: /customize_service
+        output: web, pdf
+      - title: 受注ステータスのカスタマイズ
+        url: /customize_order_state_machine
+        output: web, pdf
+      - title: テンプレートのカスタマイズ
+        url: /customize_template
+        output: web, pdf
+      - title: スロットリング機能のカスタマイズ
+        url: /customize_throttling
+        output: web, pdf
+      - title: Twig Sandboxによる許可リスト制御
+        url: /customize_twig_sandbox
+        output: web, pdf
+      - title: Symfonyの機能を使った拡張
+        url: /customize_symfony
+        output: web, pdf
+      - title: Commandの開発
+        url: /customize_symfony#command
+        output: web, pdf
+
+  - title: デザインカスタマイズ
+    output: web, pdf
+    children:
+      - title: デザインテンプレートの基礎
+        url: /design_template
+        output: web, pdf
+      - title: ブロックの利用
+        url: /design_block
+        output: web, pdf
+      - title: レイアウト管理の利用
+        url: /design_layout
+        output: web, pdf
+      - title: 画像管理について
+        url: /design_img
+        output: web, pdf
+      - title: CSSの利用
+        url: /design_css
+      - title: Sass(scss)の利用
+        url: /design_sass
+      - title: フォームレイアウトの変更
+        url: /design_form
+        output: web, pdf
+      - title: メッセージのカスタマイズ
+        url: /design_messages
+        output: web, pdf
+      - title: フロント画面デザイン参考資料（スタイルガイド）
+        url: https://eccube4-styleguide.herokuapp.com
+        output: web, pdf
+      - title: 管理画面デザイン参考資料（デザインガイド）
+        url: https://doc4.ec-cube.net/pdf/ec-cube4_design-guide180930.pdf
+        output: web, pdf
+      - title: フロント画面テンプレート for Adobe XD
+        url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
+        output: web, pdf
+      - title: 管理画面テンプレート for Adobe XD
+        url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
+        output: web, pdf
+
+  - title: プラグイン開発
+    output: web, pdf
+    children:
+      - title: プラグイン仕様
+        url: /plugin_spec
+        output: web, pdf
+      - title: プラグインのインストール
+        url: /plugin_install
+        output: web, pdf
+      - title: プラグインのトラブル対処法
+        url: /plugin_error
+        output: web, pdf
+      - title: プラグインサンプル
+        url: /plugin_sample
+        output: web, pdf
+      - title: プラグインを開発する
+        url: /plugin_development
+        output: web, pdf
+      - title: オーナーズストア経由のインストールをテストする
+        url: /plugin_mock_package_api
+        output: web, pdf
+      - title: プラグインで推奨の命名規則
+        url: /plugin_naming_conventions
+        output: web, pdf
+      - title: 管理画面ナビの拡張
+        url: /plugin_admin_nav
+        output: web, pdf
+
+  - title: 設定変更
+    output: web, pdf
+    children:
+      - title: 多言語化
+        url: /i18n_multilingualization
+        output: web, pdf
+      - title: 通貨
+        url: /i18n_currency
+        output: web, pdf
+      - title: タイムゾーン
+        url: /i18n_timezone
+        output: web, pdf
+      - title: 環境設定
+        url: /environmental_setting
+        output: web, pdf
+      - title: デバッグモード
+        url: /debug_mode
+        output: web, pdf
+      - title: セッション保存方法
+        url: /session_handler_settings
+        output: web, pdf
+
+  - title: 開発ツール
+    output: web, pdf
+    children:
+      - title: MailCatcher
+        url: /development-tools/mail-catcher
+        output: web, pdf
+
+  - title: "セキュリティテストの実施"
+    output: web, pdf
+    children:
+      - title: "はじめに"
+        url: /penetration-testing
+        output: web, pdf
+      - title: "Quick Start"
+        url: /penetration-testing/quick_start
+        output: web, pdf
+      - title: "イントロダクション"
+        url: /penetration-testing/introduction
+        output: web, pdf
+      - title: "OWASP ZAP について"
+        url: /penetration-testing/about_owaspzap
+        output: web, pdf
+      - title: "テスト計画"
+        url: /penetration-testing/planning
+        output: web, pdf
+      - title: "テストの実施"
+        url: /penetration-testing/testing
+        output: web, pdf
+      - title: "テスト評価"
+        url: /penetration-testing/review
+        output: web, pdf
+      - title: "セキュリティの改善"
+        url: /penetration-testing/improvement
+        output: web, pdf
+
+  - title: セキュリティガイドライン
+    output: web, pdf
+    children:
+      - title: コーディングについて
+        url: /security-guideline/coding
+        output: web, pdf
+      - title: プラグイン開発におけるセキュリティ強化
+        url: /security-guideline/plugin
+        output: web, pdf
+
+  - title: 逆引きリファレンス
+    output: web,pdf
+    children:
+    - title: Tips
+      url: /reverse-lookup/tips
+      output: web, pdf
+    - title: カスタマイズサンプル集
+      url: /reverse-lookup/sample-code
+      output: web, pdf
+
+  - title: 開発に参加する
+    output: web, pdf
+    children:
+    - title: EC-CUBEの開発に参加するには？（公式サイト）
+      url: https://www.ec-cube.net/committer/
+      output: web, pdf
+    - title: 開発の概要
+      url: /contribution-guide/overview
+      output: web, pdf
+    - title: プルリクエストの作り方
+      url: /contribution-guide/pull-request
+      output: web, pdf
+
+  - title: ドキュメントがみつからないときは
+    output: web, pdf
+    children:
+      - title: ドキュメントのリクエスト
+        url: /documents/request
+        output: web, pdf
+      - title: ドキュメントの追加・書き方
+        url: /documents/writing-and-formatting
+        output: web, pdf
+      - title: ドキュメントの投稿
+        url: /documents/contribute
+        output: web, pdf
