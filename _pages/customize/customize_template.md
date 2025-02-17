@@ -1,5 +1,5 @@
 ---
-title: テンプレートのカスタマイズ
+title: Tùy chỉnh template
 keywords: core カスタマイズ テンプレート
 tags: [core, template]
 permalink: customize_template
@@ -7,6 +7,6 @@ folder: customize
 
 ---
 
-# Templateのカスタマイズ
-+ Twigの変更
-+ Twigユーザ定義関数 [#2263](https://github.com/EC-CUBE/ec-cube/pull/2263){:target="_blank"}
+## Tùy chỉnh Template  
++ Thay đổi Twig  
++ Hàm do người dùng định nghĩa trong Twig [#2263](https://github.com/EC-CUBE/ec-cube/pull/2263){:target="_blank"}

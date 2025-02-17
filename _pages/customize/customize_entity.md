@@ -1,19 +1,18 @@
 ---
-title: Entityのカスタマイズ
+title: Tùy chỉnh Entity
 keywords: core カスタマイズ Entity
 tags: [core, entity]
 permalink: customize_entity
 folder: customize
 ---
 
-## Entity拡張 [#2267](https://github.com/EC-CUBE/ec-cube/pull/2267){:target="_blank"}
+## Mở rộng Entity [#2267](https://github.com/EC-CUBE/ec-cube/pull/2267){:target="_blank"}
 
-### 基本の拡張方法
+### Cách mở rộng cơ bản
 
-trait と `@EntityExtension` アノテーションを使用して、 Entity のフィールドを拡張可能です。
-継承を使用せずに Proxy クラスを生成するため、複数のプラグインや、独自カスタマイズからの拡張を共存できます。
+Bằng cách sử dụng trait và chú thích `@EntityExtension`, bạn có thể mở rộng các trường của Entity. Vì Proxy class được tạo mà không sử dụng kế thừa, nên có thể đồng thời mở rộng từ nhiều plugin hoặc tùy chỉnh riêng.
 
-``` php
+```php
 <?php
 
 namespace Customize\Entity;
@@ -33,36 +32,33 @@ trait ProductTrait
 }
 ```
 
-`@EntityExtension` アノテーションの引数には、 trait を適用したいクラスを指定します。
-trait には、追加したいフィールドを実装します。
-`@ORM\Column` など、 Doctrine ORM のアノテーションを使用して、データベース定義を設定します。
+Trong tham số của chú thích `@EntityExtension`, bạn chỉ định lớp mà bạn muốn áp dụng trait. Trong trait, bạn triển khai các trường muốn thêm vào. Sử dụng các chú thích của Doctrine ORM như `@ORM\Column` để thiết lập định nghĩa cơ sở dữ liệu.
 
-trait の実装ができたら、 `bin/console eccube:generate:proxies` コマンドで Proxy クラスを生成します。
+Sau khi triển khai trait, bạn có thể tạo Proxy class bằng cách sử dụng lệnh `bin/console eccube:generate:proxies`.
 
 ```
 bin/console eccube:generate:proxies
 ```
 
-Proxy を生成できたら、 `bin/console doctrine:schema:update` コマンドで、定義をデータベースに反映します。
+Sau khi tạo Proxy, bạn cần phản ánh định nghĩa vào cơ sở dữ liệu bằng lệnh `bin/console doctrine:schema:update`.
 
 ```
-## 作成した Proxy クラスを確実に認識できるようキャッシュを削除
+## Xóa cache để chắc chắn Proxy class được nhận diện
 bin/console cache:clear --no-warmup
 
-## 実行する SQL を確認
+## Kiểm tra SQL sẽ được thực thi
 bin/console doctrine:schema:update --dump-sql
 
-## SQL を実行
+## Thực thi SQL
 bin/console doctrine:schema:update --dump-sql --force
 ```
 
-#### コントローラや Twig での利用
+#### Sử dụng trong Controller và Twig
 
-コントローラや Twig で利用する際は、特に何も意識せずに利用可能です。
+Khi sử dụng trong Controller hoặc Twig, bạn có thể sử dụng mà không cần phải đặc biệt lưu ý gì.
 
-
-``` php
-// コントローラでの使用例
+```php
+// Ví dụ sử dụng trong Controller
 public function index()
 {
     $Product = $this->productRepository->find(1);
@@ -74,16 +70,16 @@ public function index()
     ...
 ```
 
-``` twig
-{# twig での使用例 #}
+```twig
+{# Ví dụ sử dụng trong Twig #}
 {{ Product.maker_name }}
 ```
 
-### Entity からフォームを自動生成する
+### Tự động tạo form từ Entity
 
-`@EntityExtension` アノテーションで拡張したフィールドに `@FormAppend` アノテーションを追加することで、フォームを自動生成できます。
+Bằng cách thêm chú thích `@FormAppend` vào trường mở rộng bởi chú thích `@EntityExtension`, bạn có thể tự động tạo form.
 
-``` php
+```php
 <?php
 
 namespace Customize\Entity;
@@ -104,15 +100,13 @@ trait BaseInfoTrait
      */
     public $company_name_vn;
 }
-
 ```
 
-`@FormAppend` アノテーションを追加すると、対象のエンティティを使用しているフォームに、追加したフィールドのフォームが追加されます。
-入力チェックを使用したい場合は、 `@NotBlank` など [Symfony 標準のアノテーション](https://symfony.com/doc/current/reference/constraints.html){:target="_blank"} を使用できます。
+Khi thêm chú thích `@FormAppend`, form sẽ tự động thêm trường mới vào form đang sử dụng entity đó. Nếu bạn muốn kiểm tra dữ liệu đầu vào, bạn có thể sử dụng các chú thích chuẩn của Symfony như `@NotBlank`.
 
-フォームを詳細にカスタマイズしたい場合は、 `auto_render=true` を指定し、 `form_theme` や `type`, `option` を個別に指定します。
+Nếu bạn muốn tùy chỉnh form chi tiết hơn, có thể sử dụng `auto_render=true` và chỉ định các tham số như `form_theme`, `type`, `option` cho từng trường riêng biệt.
 
-``` php
+```php
 <?php
 
 namespace Customize\Entity;

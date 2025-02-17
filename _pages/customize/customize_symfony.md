@@ -1,26 +1,27 @@
 ---
-title: Symfonyの機能を使ったカスタマイズ
+title: Mở rộng với tính năng Symfony
 keywords: core カスタマイズ Symfony
 tags: [core, symfony]
 permalink: customize_symfony
 folder: customize
+---
+
+## Tổng quan  
+
+EC-CUBE được phát triển dựa trên Symfony và Doctrine.  
+Vì vậy, có thể tận dụng các cơ chế mở rộng do Symfony và Doctrine cung cấp.  
+
+Bài viết này sẽ giới thiệu một số cơ chế mở rộng tiêu biểu và cách triển khai chúng.  
 
 ---
 
-## 概要
+## Sự kiện Symfony  
 
-EC-CUBEは、SymfonyやDoctrineをベースに開発されています。
-そのため、SymfonyやDoctrineが提供している拡張機構を利用することができます。
+Có thể sử dụng hệ thống sự kiện của Symfony.  
 
-ここでは、代表的な拡張機構とその実装方法を紹介します。
+### Tạo một Event Listener hiển thị "hello world"  
 
-## Symfony Event
-
-Symfonyのイベントシステムを利用することができます。
-
-### hello worldを表示するイベントリスナーを作成する
-
-`app/Customize/EventListener`配下にに`HelloListener.php`を作成します。
+Tạo tệp `HelloListener.php` trong thư mục `app/Customize/EventListener`.  
 
 ```php
 <?php
@@ -47,24 +48,35 @@ class HelloListener implements EventSubscriberInterface
 }
 ```
 
-作成後、画面を表示(どのページでも表示されます)し、`hello world`が表示されていれば成功です。
+Sau khi tạo, nếu "hello world" xuất hiện trên bất kỳ trang nào thì đã thành công.  
 
-表示されない場合は、`bin/console cache:clear --no-warmup`でキャッシュを削除してください。
-また、`bin/console debug:event-dispatcher`で登録されているイベントリスナーを確認できます。
+Nếu không hiển thị, hãy xóa bộ nhớ đệm bằng lệnh:  
 
-イベントに関する詳細は以下を参照してください。
+```bash
+bin/console cache:clear --no-warmup
+```
 
-- [The HttpKernel Component](https://symfony.com/doc/current/components/http_kernel.html){:target="_blank"}
-- [Events and Event Listeners](https://symfony.com/doc/current/event_dispatcher.html){:target="_blank"}
-- [Built-in Symfony Events](https://symfony.com/doc/current/reference/events.html){:target="_blank"}
+Bạn cũng có thể kiểm tra các Event Listener đã đăng ký bằng lệnh:  
 
-## Command
+```bash
+bin/console debug:event-dispatcher
+```
 
-`bin/console`から実行できるコンソールコマンドを作成することが出来ます。
+**Tham khảo:**  
 
-### hello worldを表示するコマンドを作成する
+- [The HttpKernel Component](https://symfony.com/doc/current/components/http_kernel.html)  
+- [Events and Event Listeners](https://symfony.com/doc/current/event_dispatcher.html)  
+- [Built-in Symfony Events](https://symfony.com/doc/current/reference/events.html)  
 
-`app/Customize/Command`配下に`HelloCommand.php`を作成します。
+---
+
+## Command  
+
+Có thể tạo các lệnh console có thể chạy bằng `bin/console`.  
+
+### Tạo một lệnh hiển thị "hello world"  
+
+Tạo tệp `HelloCommand.php` trong thư mục `app/Customize/Command`.  
 
 ```php
 <?php
@@ -78,45 +90,53 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class HelloCommand extends Command
 {
-    // コマンド名
+    // Tên lệnh
     protected static $defaultName = 'acme:hello';
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
 
-        // hello worldを表示
+        // Hiển thị "hello world"
         $io->success('hello world');
     }
 }
 ```
 
-- `$defaultName`はコマンド名を表します。
-- `$io->success('hello world')`で、hello worldを表示します。
+- `$defaultName` xác định tên lệnh.  
+- `$io->success('hello world')` hiển thị "hello world".  
 
-作成後、`bin/console`で実行することができます。
+Sau khi tạo, có thể thực thi bằng lệnh sau:  
 
 ```bash
-
-$ bin/console acme:hello
-
- [OK] hello world
-
+bin/console acme:hello
 ```
 
-※ コマンドが認識されない場合は、`bin/console cache:clear --no-warmup`でキャッシュを削除してください。
+Kết quả đầu ra:  
 
-Commandに関する詳細は以下を参照してください。
+```
+ [OK] hello world
+```
 
-- [Console Commands](https://symfony.com/doc/current/console.html){:target="_blank"}
+Nếu lệnh không được nhận diện, hãy xóa bộ nhớ đệm bằng lệnh:  
 
-## Doctrine Event
+```bash
+bin/console cache:clear --no-warmup
+```
 
-Doctrineのイベントシステムを利用することができます。
+**Tham khảo:**  
 
-### ショップ名にようこそを付与するイベントリスナーを作成する
+- [Console Commands](https://symfony.com/doc/current/console.html)  
 
-`app/Customize/Doctrine/EventSubscriber`配下に`HelloEventSubscriber.php`を作成します。
+---
+
+## Sự kiện Doctrine  
+
+Có thể sử dụng hệ thống sự kiện của Doctrine.  
+
+### Tạo một Event Listener thêm chuỗi "Chào mừng đến với" vào tên cửa hàng  
+
+Tạo tệp `HelloEventSubscriber.php` trong thư mục `app/Customize/Doctrine/EventSubscriber`.  
 
 ```php
 <?php
@@ -140,25 +160,30 @@ class HelloEventSubscriber implements EventSubscriber
         $entity = $args->getObject();
         if ($entity instanceof BaseInfo) {
             $shopName = $entity->getShopName();
-            $shopName = 'ようこそ '.$shopName.' へ';
+            $shopName = 'Chào mừng đến với ' . $shopName;
             $entity->setShopName($shopName);
         }
     }
 }
 ```
 
-作成後、トップページを開き、`ようこそ [ショップ名] へ`が表示されていれば成功です。
+Sau khi tạo, mở trang chủ và nếu hiển thị `"Chào mừng đến với [Tên cửa hàng]"` thì đã thành công.  
 
-表示されない場合は、`bin/console cache:clear --no-warmup`でキャッシュを削除してください。
+Nếu không hiển thị, hãy xóa bộ nhớ đệm bằng lệnh:  
 
-イベントに関する詳細は以下を参照してください。
+```bash
+bin/console cache:clear --no-warmup
+```
 
-- [The Event System](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/events.html){:target="_blank"}
-- [Doctrine Event Listeners and Subscribers](https://symfony.com/doc/current/doctrine/event_listeners_subscribers.html){:target="_blank"}
+**Tham khảo:**  
 
-※ [Doctrine Event Listeners and Subscribers](https://symfony.com/doc/current/doctrine/event_listeners_subscribers.html){:target="_blank"}では、`services.yaml`での設定方法が記載されていますが、EC-CUBEはDoctrineのイベントリスナーをコンテナへ自動登録します。そのため、`services.yaml`での設定は不要です。
+- [The Event System](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/events.html)  
+- [Doctrine Event Listeners and Subscribers](https://symfony.com/doc/current/doctrine/event_listeners_subscribers.html)  
 
-## SymfonyのBundleを利用する
+Lưu ý: Symfony cung cấp cách đăng ký sự kiện trong `services.yaml`, nhưng EC-CUBE tự động đăng ký Event Listener vào container, nên không cần cấu hình trong `services.yaml`.  
 
-TODO
+---
 
+## Sử dụng Symfony Bundle  
+
+(TODO)  

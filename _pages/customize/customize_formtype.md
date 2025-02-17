@@ -1,22 +1,23 @@
 ---
-title: FormTypeのカスタマイズ
+title: Tùy chỉnh FormType
 keywords: core カスタマイズ FormType
 tags: [core, formtype]
 permalink: customize_formtype
 folder: customize
 ---
 
-## FormExtensionを使った拡張
+## Mở rộng Form bằng FormExtension
 
-FormExtensionの仕組みを利用すれば、既存のフォームをカスタマイズすることができます。
+Cơ chế `FormExtension` cho phép bạn tùy chỉnh các biểu mẫu (form) hiện có trong EC-CUBE.
 
-### 拡張方法
+### Cách mở rộng
 
-`./app/Customize/Form/Extension/` に `AbstractTypeExtension` を継承したクラスファイルを作成することで、自動的にFormExtensionとして認識されます。
+Bạn có thể tạo một tệp lớp kế thừa `AbstractTypeExtension` trong thư mục `./app/Customize/Form/Extension/`.  
+Sau khi tạo, EC-CUBE sẽ tự động nhận diện nó là một `FormExtension`.
 
-#### 拡張するフォーム種類の指定
+#### Chỉ định loại biểu mẫu cần mở rộng
 
-EC-CUBE 4.0では、getExtendedType関数は必ず実装し、拡張するフォームの種類を指定する必要があります。
+- **EC-CUBE 4.0:** Bạn cần triển khai phương thức `getExtendedType()` để chỉ định loại biểu mẫu sẽ mở rộng.
 
 ```php
 public function getExtendedType()
@@ -25,7 +26,7 @@ public function getExtendedType()
 }
 ```
 
-EC-CUBE 4.1以降は、getExtendedType関数は必ず実装し、拡張するフォームの種類を指定する必要があります。
+- **EC-CUBE 4.1 trở lên:** Bạn cần triển khai phương thức `getExtendedTypes()` để chỉ định loại biểu mẫu.
 
 ```php
 public static function getExtendedTypes(): iterable
@@ -34,24 +35,27 @@ public static function getExtendedTypes(): iterable
 }
 ```
 
-#### 拡張用の関数
+#### Các phương thức mở rộng
 
-以下の関数をオーバーライドし、引数で渡されるパラメータを変更することでフォームのカスタマイズが可能です。
+Bạn có thể ghi đè các phương thức sau để thay đổi tham số truyền vào và tùy chỉnh biểu mẫu:
 
-- buildForm()
-- buildView()
-- configureOptions()
-- finishView()
+- `buildForm()`
+- `buildView()`
+- `configureOptions()`
+- `finishView()`
 
-EC-CUBE 4では、SymfonyのFormExtensionの仕組みを利用しています。  
-拡張方法の詳細についてはSymfonyのドキュメントを参照してください。
-https://symfony.com/doc/current/form/create_form_type_extension.html
+EC-CUBE 4 sử dụng cơ chế `FormExtension` của Symfony.  
+Chi tiết cách mở rộng, tham khảo tài liệu Symfony:  
+[Symfony Form Type Extension](https://symfony.com/doc/current/form/create_form_type_extension.html)
 
-### サンプル
+---
 
-会員登録ページのフォームを拡張して、会社名を入力必須項目に変更するサンプルです。
+### Ví dụ
 
-./app/Customize/Form/Extension/CompanyNameRequiredExtension.php
+Dưới đây là ví dụ mở rộng biểu mẫu trên trang đăng ký thành viên, làm cho trường "Tên công ty" (`company_name`) trở thành bắt buộc.
+
+📂 **Tạo tệp sau:**  
+`./app/Customize/Form/Extension/CompanyNameRequiredExtension.php`
 
 ```php
 <?php
@@ -67,7 +71,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 class CompanyNameRequiredExtension extends AbstractTypeExtension
 {
     /**
-     * {@inheritdoc}
+     * Thêm yêu cầu bắt buộc cho trường company_name.
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -75,13 +79,13 @@ class CompanyNameRequiredExtension extends AbstractTypeExtension
 
         $options['required'] = true;
         $options['constraints'] = [ new NotBlank() ];
-        $options['attr']['placeholder'] = '会社名';
+        $options['attr']['placeholder'] = 'Tên công ty';
 
         $builder->add('company_name', TextType::class, $options);
     }
 
     /**
-     * {@inheritdoc}
+     * Định nghĩa loại biểu mẫu được mở rộng (EC-CUBE 4.0).
      */
     public function getExtendedType()
     {
@@ -89,17 +93,17 @@ class CompanyNameRequiredExtension extends AbstractTypeExtension
     }
     
     /**
-     * {@inheritdoc}
+     * Định nghĩa loại biểu mẫu được mở rộng (EC-CUBE 4.1 trở lên).
      */
     public static function getExtendedTypes(): iterable
     {
         yield EntryType::class;
     }
 }
-
 ```
 
-## Entityからフォームを生成する拡張
+---
 
-[Entityのカスタマイズ](/customize_entity) を参照してください。
+## Mở rộng biểu mẫu từ Entity
 
+Xem thêm tại: [Tùy chỉnh Entity](/customize_entity).

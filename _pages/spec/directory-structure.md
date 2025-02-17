@@ -1,5 +1,5 @@
 ---
-title: ディレクトリ・ファイル構成
+title: Cấu trúc thư mục
 keywords: spec directory structure
 tags: [spec, getting_started]
 permalink: spec_directory-structure
@@ -7,46 +7,46 @@ permalink: spec_directory-structure
 layout: single
 ---
 
-## 特徴
+## Đặc điểm
 
-1. [Symfony3系のディレクトリ構造](https://symfony.com/doc/3.4/quick_tour/the_architecture.html){:target="_blank"}を参考に、EC-CUBE 4 独自構成となっています。
+1. Dựa trên [Cấu trúc thư mục của Symfony3](https://symfony.com/doc/3.4/quick_tour/the_architecture.html){:target="_blank"}, EC-CUBE 4 có cấu trúc riêng biệt.
 
-## 主なディレクトリと役割
+## Các thư mục chính và vai trò
 
 ### app/
 
-- 設定ファイルやプラグイン、EC-CUBEをカスタマイズするPHPコードなど、アプリケーションごとに変更されるファイルを配置
+- Đặt các tệp thay đổi cho mỗi ứng dụng, như tệp cấu hình, plugin và mã PHP tùy chỉnh EC-CUBE
 
 ```
 app
-├── Customize   カスタマイズ用PHPコードを配置
-├── Plugin      インストールしたプラグインを配置
-├── PluginData  プラグインが利用するファイルを配置
-├── config      設定ファイルを配置
-├── proxy       Entity拡張機能によって生成されたProxyクラスを配置
-└── template    上書きされたテンプレートファイルを配置
+├── Customize   Đặt mã PHP tùy chỉnh
+├── Plugin      Đặt các plugin đã cài đặt
+├── PluginData  Đặt các tệp sử dụng bởi plugin
+├── config      Đặt tệp cấu hình
+├── proxy       Đặt các lớp Proxy được tạo bởi tính năng mở rộng Entity
+└── template    Đặt các tệp mẫu bị ghi đè
 ```
 
 ### bin/
 
-- `bin/console`など、開発に使用する実行ファイルを配置
+- Đặt các tệp thực thi sử dụng trong phát triển, như `bin/console`
 
 ### html/
 
-- リソースファイル(jsやcssや画像ファイル）を配置
+- Đặt các tệp tài nguyên (như tệp js, css và hình ảnh)
 
 ### src/
 
-- EC-CUBE本体となり、phpファイルやTwigファイルを配置
+- Đặt các tệp PHP và Twig của phần cốt lõi EC-CUBE
 
 ### tests/
 
-- テストコードを配置
+- Đặt mã kiểm tra
 
 ### var/
 
-- キャッシュやログファイルなど、実行時に生成されるファイルを配置
+- Đặt các tệp được tạo ra trong quá trình chạy, như bộ nhớ cache và tệp nhật ký
 
 ### vendor/
 
-- サードパーティの依存ライブラリを配置
+- Đặt các thư viện phụ thuộc của bên thứ ba

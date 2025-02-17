@@ -1,8 +1,8 @@
 # main links
 main:
-  - title: "EC-CUBEについて"
+  - title: "Về EC-CUBE"
     url: https://www.ec-cube.net/
-  - title: "開発コミュニティ"
+  - title: "Cộng đồng phát triển"
     url: https://xoops.ec-cube.net/
 
 # documentation links
@@ -10,322 +10,322 @@ docs:
   - title: ec-cube.co
     output: web, pdf
     children:
-      - title: ec-cube.coとは
+      - title: Về ec-cube.co
         url: /co
         output: web, pdf
-      - title: セキュリティ対策について
+      - title: Về các biện pháp bảo mật
         url: /co/co_security
         output: web, pdf
-      - title: アップデート指針
+      - title: Hướng dẫn cập nhật
         url: /co/co_update_guidelines
         output: web, pdf
       - title: Console
         url: /co/co_console
         output: web, pdf
-      - title: ネーミングルール
+      - title: Quy tắc đặt tên
         url: /co/co_naming_rules
         output: web, pdf
-      - title: Git管理機能の仕様
+      - title: Tính năng quản lý Git
         url: /co/co_git
         output: web, pdf
-      - title: カスタマイズディレクトリ利用方法
+      - title: Cách sử dụng thư mục tùy chỉnh
         url: /co/co_customize_dir_usage
         output: web, pdf
-      - title: テスト環境の構築
+      - title: Xây dựng môi trường thử nghiệm
         url: /co/co_staging
         output: web, pdf
-      - title: ログの取得
+      - title: Lấy log
         url: /co/co_log
         output: web, pdf
-      - title: FAQ
+      - title: Câu hỏi thường gặp
         url: /co/co_faq
         output: web, pdf
 
-  - title: はじめに
+  - title: Bắt đầu
     output: web, pdf
     children:
-      - title: 最新バージョン
+      - title: Phiên bản mới nhất
         url: /quickstart/latest_version
         output: web, pdf
-      - title: システム要件
+      - title: Yêu cầu hệ thống
         url: /quickstart/requirement
         output: web, pdf
-      - title: 本番環境での注意事項
+      - title: Những lưu ý khi sử dụng môi trường sản xuất
         url: /quickstart/cautions_of_prod
         output: web, pdf
 
-  - title: 初学者向け情報
+  - title: Thông tin cho người mới bắt đầu
     output: web, pdf
     children:
-      - title: 学習のステップ
+      - title: Các bước học tập
         url: /learning/learning_step
         output: web, pdf
 
-  - title: インストール
+  - title: Cài đặt
     output: web, pdf
     children:
-      - title: 各種インストール方法
+      - title: Các phương pháp cài đặt
         url: /quickstart/install
         output: web, pdf
-      - title: コマンドラインインターフェイス
+      - title: Giao diện dòng lệnh
         url: /quickstart/cli
         output: web, pdf
 
-  - title: バージョンアップ
+  - title: Cập nhật phiên bản
     output: web, pdf
     children:
-      - title: 4.2から4.3への本体バージョンアップ
+      - title: Cập nhật phiên bản chính từ 4.2 lên 4.3
         url: /update43
         output: web, pdf
-      - title: 4.2から4.3へのマイグレーション
+      - title: Di chuyển từ 4.2 lên 4.3
         url: /update-42-43
         output: web, pdf
-      - title: 4.1から4.2へのマイグレーション
+      - title: Di chuyển từ 4.1 lên 4.2
         url: /update-41-42
         output: web, pdf
-      - title: 4.0から4.1への本体バージョンアップ
+      - title: Cập nhật phiên bản chính từ 4.0 lên 4.1
         url: /update41
         output: web, pdf
-      - title: 4.0から4.1へのマイグレーション
+      - title: Di chuyển từ 4.0 lên 4.1
         url: /update-40-41
         output: web, pdf
-      - title: 4.2本体バージョンアップ
+      - title: Cập nhật phiên bản chính 4.2
         url: /update42x
         output: web, pdf
-      - title: 4.1本体バージョンアップ
+      - title: Cập nhật phiên bản chính 4.1
         url: /update41x
         output: web, pdf
-      - title: 4.0本体バージョンアップ
+      - title: Cập nhật phiên bản chính 4.0
         url: /update
         output: web, pdf
-      - title: 4.0.3での注意点
+      - title: Lưu ý với 4.0.3
         url: /update/4_0_3
         output: web, pdf
-      - title: SameSite Cookie 対応
+      - title: Hỗ trợ cookie SameSite
         url: /hotfix_samesite_cookie
         output: web, pdf
 
-  - title: 機能仕様
+  - title: Thông số kỹ thuật tính năng
     output: web, pdf
     children:
-      - title: 機能一覧
+      - title: Danh sách tính năng
         url: https://www.ec-cube.net/product/functions.php
         output: web, pdf
-      - title: 受注関連
+      - title: Liên quan đến đơn hàng
         url: /spec_order
         output: web, pdf
-      - title: 税率設定
+      - title: Cài đặt tỷ lệ thuế
         url: /spec_tax
         output: web, pdf
-      - title: 支払方法設定
+      - title: Cài đặt phương thức thanh toán
         url: /spec_payment
         output: web, pdf
 
-  - title: 本体カスタマイズ
+  - title: Tùy chỉnh chính
     output: web, pdf
     children:
-      - title: ディレクトリ構成
+      - title: Cấu trúc thư mục
         url: /spec_directory-structure
         output: web, pdf
-      - title: Controllerのカスタマイズ
+      - title: Tùy chỉnh Controller
         url: /customize_controller
         output: web, pdf
-      - title: Entityのカスタマイズ
+      - title: Tùy chỉnh Entity
         url: /customize_entity
         output: web, pdf
-      - title: Repositoryのカスタマイズ
+      - title: Tùy chỉnh Repository
         url: /customize_repository
         output: web, pdf
-      - title: FormTypeのカスタマイズ
+      - title: Tùy chỉnh FormType
         url: /customize_formtype
         output: web, pdf
-      - title: 購入フローのカスタマイズ
+      - title: Tùy chỉnh quy trình mua hàng
         url: /customize_service
         output: web, pdf
-      - title: 受注ステータスのカスタマイズ
+      - title: Tùy chỉnh trạng thái đơn hàng
         url: /customize_order_state_machine
         output: web, pdf
-      - title: テンプレートのカスタマイズ
+      - title: Tùy chỉnh template
         url: /customize_template
         output: web, pdf
-      - title: スロットリング機能のカスタマイズ
+      - title: Tùy chỉnh tính năng hạn chế tốc độ
         url: /customize_throttling
         output: web, pdf
-      - title: Twig Sandboxによる許可リスト制御
+      - title: Kiểm soát danh sách trắng bằng Twig Sandbox
         url: /customize_twig_sandbox
         output: web, pdf
-      - title: Symfonyの機能を使った拡張
+      - title: Mở rộng với tính năng Symfony
         url: /customize_symfony
         output: web, pdf
-      - title: Commandの開発
+      - title: Phát triển Command
         url: /customize_symfony#command
         output: web, pdf
 
-  - title: デザインカスタマイズ
+  - title: Tùy chỉnh thiết kế
     output: web, pdf
     children:
-      - title: デザインテンプレートの基礎
+      - title: Cơ sở template thiết kế
         url: /design_template
         output: web, pdf
-      - title: ブロックの利用
+      - title: Sử dụng block
         url: /design_block
         output: web, pdf
-      - title: レイアウト管理の利用
+      - title: Sử dụng quản lý layout
         url: /design_layout
         output: web, pdf
-      - title: 画像管理について
+      - title: Quản lý hình ảnh
         url: /design_img
         output: web, pdf
-      - title: CSSの利用
+      - title: Sử dụng CSS
         url: /design_css
-      - title: Sass(scss)の利用
+      - title: Sử dụng Sass (scss)
         url: /design_sass
-      - title: フォームレイアウトの変更
+      - title: Thay đổi layout form
         url: /design_form
         output: web, pdf
-      - title: メッセージのカスタマイズ
+      - title: Tùy chỉnh thông điệp
         url: /design_messages
         output: web, pdf
-      - title: フロント画面デザイン参考資料（スタイルガイド）
+      - title: Tài liệu tham khảo thiết kế giao diện người dùng (style guide)
         url: https://eccube4-styleguide.herokuapp.com
         output: web, pdf
-      - title: 管理画面デザイン参考資料（デザインガイド）
+      - title: Tài liệu tham khảo thiết kế giao diện quản trị (design guide)
         url: https://doc4.ec-cube.net/pdf/ec-cube4_design-guide180930.pdf
         output: web, pdf
-      - title: フロント画面テンプレート for Adobe XD
+      - title: Template giao diện người dùng for Adobe XD
         url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_front_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
         output: web, pdf
-      - title: 管理画面テンプレート for Adobe XD
+      - title: Template giao diện quản trị for Adobe XD
         url: http://downloads.ec-cube.net/manual/documents/eccube4_xd_admin_template.zip?argument=2qpV46CP&dmai=a5bf51b05bacc5
         output: web, pdf
 
-  - title: プラグイン開発
+  - title: Phát triển plugin
     output: web, pdf
     children:
-      - title: プラグイン仕様
+      - title: Thông số kỹ thuật plugin
         url: /plugin_spec
         output: web, pdf
-      - title: プラグインのインストール
+      - title: Cài đặt plugin
         url: /plugin_install
         output: web, pdf
-      - title: プラグインのトラブル対処法
+      - title: Cách xử lý sự cố plugin
         url: /plugin_error
         output: web, pdf
-      - title: プラグインサンプル
+      - title: Mẫu plugin
         url: /plugin_sample
         output: web, pdf
-      - title: プラグインを開発する
+      - title: Phát triển plugin
         url: /plugin_development
         output: web, pdf
-      - title: オーナーズストア経由のインストールをテストする
+      - title: Kiểm tra cài đặt qua Owners Store
         url: /plugin_mock_package_api
         output: web, pdf
-      - title: プラグインで推奨の命名規則
+      - title: Quy tắc đặt tên plugin khuyến nghị
         url: /plugin_naming_conventions
         output: web, pdf
-      - title: 管理画面ナビの拡張
+      - title: Mở rộng điều hướng giao diện quản trị
         url: /plugin_admin_nav
         output: web, pdf
 
-  - title: 設定変更
+  - title: Thay đổi cài đặt
     output: web, pdf
     children:
-      - title: 多言語化
+      - title: Đa ngôn ngữ
         url: /i18n_multilingualization
         output: web, pdf
-      - title: 通貨
+      - title: Tiền tệ
         url: /i18n_currency
         output: web, pdf
-      - title: タイムゾーン
+      - title: Múi giờ
         url: /i18n_timezone
         output: web, pdf
-      - title: 環境設定
+      - title: Cài đặt môi trường
         url: /environmental_setting
         output: web, pdf
-      - title: デバッグモード
+      - title: Chế độ gỡ lỗi
         url: /debug_mode
         output: web, pdf
-      - title: セッション保存方法
+      - title: Cách lưu phiên
         url: /session_handler_settings
         output: web, pdf
 
-  - title: 開発ツール
+  - title: Công cụ phát triển
     output: web, pdf
     children:
       - title: MailCatcher
         url: /development-tools/mail-catcher
         output: web, pdf
 
-  - title: "セキュリティテストの実施"
+  - title: "Thực hiện kiểm tra bảo mật"
     output: web, pdf
     children:
-      - title: "はじめに"
+      - title: "Bắt đầu"
         url: /penetration-testing
         output: web, pdf
       - title: "Quick Start"
         url: /penetration-testing/quick_start
         output: web, pdf
-      - title: "イントロダクション"
+      - title: "Giới thiệu"
         url: /penetration-testing/introduction
         output: web, pdf
-      - title: "OWASP ZAP について"
+      - title: "Về OWASP ZAP"
         url: /penetration-testing/about_owaspzap
         output: web, pdf
-      - title: "テスト計画"
+      - title: "Kế hoạch kiểm tra"
         url: /penetration-testing/planning
         output: web, pdf
-      - title: "テストの実施"
+      - title: "Thực hiện kiểm tra"
         url: /penetration-testing/testing
         output: web, pdf
-      - title: "テスト評価"
+      - title: "Đánh giá kiểm tra"
         url: /penetration-testing/review
         output: web, pdf
-      - title: "セキュリティの改善"
+      - title: "Cải thiện bảo mật"
         url: /penetration-testing/improvement
         output: web, pdf
 
-  - title: セキュリティガイドライン
+  - title: Hướng dẫn bảo mật
     output: web, pdf
     children:
-      - title: コーディングについて
+      - title: Lập trình
         url: /security-guideline/coding
         output: web, pdf
-      - title: プラグイン開発におけるセキュリティ強化
+      - title: Phát triển pluginにおけるセキュリティ強化
         url: /security-guideline/plugin
         output: web, pdf
 
-  - title: 逆引きリファレンス
+  - title: Tham chiếu ngược
     output: web,pdf
     children:
-    - title: Tips
+    - title: Mẹo
       url: /reverse-lookup/tips
       output: web, pdf
-    - title: カスタマイズサンプル集
+    - title: Bộ sưu tập mẫu tùy chỉnh
       url: /reverse-lookup/sample-code
       output: web, pdf
 
-  - title: 開発に参加する
+  - title: Tham gia phát triển
     output: web, pdf
     children:
-    - title: EC-CUBEの開発に参加するには？（公式サイト）
+    - title: Làm thế nào để tham gia phát triển EC-CUBE? (Trang chính thức)
       url: https://www.ec-cube.net/committer/
       output: web, pdf
-    - title: 開発の概要
+    - title: Tổng quan phát triển
       url: /contribution-guide/overview
       output: web, pdf
-    - title: プルリクエストの作り方
+    - title: Cách tạo pull request
       url: /contribution-guide/pull-request
       output: web, pdf
 
-  - title: ドキュメントがみつからないときは
+  - title: Khi không tìm thấy tài liệu
     output: web, pdf
     children:
-      - title: ドキュメントのリクエスト
+      - title: Yêu cầu tài liệu
         url: /documents/request
         output: web, pdf
-      - title: ドキュメントの追加・書き方
+      - title: Thêm và viết tài liệu
         url: /documents/writing-and-formatting
         output: web, pdf
-      - title: ドキュメントの投稿
+      - title: Đăng tải tài liệu"
         url: /documents/contribute
         output: web, pdf
